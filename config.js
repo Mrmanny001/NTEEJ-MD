@@ -4,7 +4,7 @@ if (fs.existsSync(".env"))
   require("dotenv").config({ path: __dirname + "/.env" });
 
 //=======[dependencies]====================//
-global.SESSION_ID = process.env.SESSION_ID || "eyJub2lzZUtleSI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiYU5RNzdZY3h2TGxURk10R3pYcFVBZUhvSzZNUGR3bGZZYytKSzdCVVZHYz0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiSk5ETGsybnBQZzkrcUsvUHMvMUc5dFVwdkNVcmsyTmRMUXVpUUVvS0V5bz0ifX0sInBhaXJpbmdFcGhlbWVyYWxLZXlQYWlyIjp7InByaXZhdGUiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJNR1U4WWV1Mml3REYxaVJJTzZIUEd3Z2o3MHF6ck1ZeGIxOCtEeW53dmxVPSJ9LCJwdWJsaWMiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiIrMWd2OERYVlJOcmtiN3Q4djEzamU2VUpJUDhDZDRmTGxkOEVXSGV5NVNVPSJ9fSwic2lnbmVkSWRlbnRpdHlLZXkiOnsicHJpdmF0ZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IkdGcmVWeTZHdkcvNnYrdW55aFNSdjlCQmtPM1h4dzZ0eUcrTFpPMksyMW89In0sInB1YmxpYyI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6ImNhQzNCbUIrdUdEVCt1d2RWRks3dW1nZ09VRG1IbVBlenZxVWdaWDhRVDA9In19LCJzaWduZWRQcmVLZXkiOnsia2V5UGFpciI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiNElRckpsWHUxNlplVGdyTTlvb3hXbXdROGs2OC9IR2g0TXFOVDJFMXEwOD0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiUUhoeEgrWjh6Qjdwbkh0Z2d5aFpCNDBZQzY5R09CbnYyK2NLaFgrcVkyRT0ifX0sInNpZ25hdHVyZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6Ik5nTG9sdFBYV1ZNdmZlQnRYSml6RUREVEFBeHdWejl4MnhpM3c3cTFVNHRCOEVnY1RhZlpMTU5JZnZDLzVpNnhDMndMWGNkNnhyeEZ6SVhuRDFqUEFRPT0ifSwia2V5SWQiOjF9LCJyZWdpc3RyYXRpb25JZCI6MTM0LCJhZHZTZWNyZXRLZXkiOiI5L2VEL2hDK3YySjFCR1lSY05zOTBxdXJvc2FzVlpBMlQ0QzUzTmhrMnBvPSIsInByb2Nlc3NlZEhpc3RvcnlNZXNzYWdlcyI6W3sia2V5Ijp7InJlbW90ZUppZCI6IjIzNDgxMjM5OTc5NzZAcy53aGF0c2FwcC5uZXQiLCJmcm9tTWUiOnRydWUsImlkIjoiNkY0MjBCOTYxNTUxOTNBQjA5OTc2MjU0ODQwMjlBMjQifSwibWVzc2FnZVRpbWVzdGFtcCI6MTcyMDIxNDUzOX0seyJrZXkiOnsicmVtb3RlSmlkIjoiMjM0ODEyMzk5Nzk3NkBzLndoYXRzYXBwLm5ldCIsImZyb21NZSI6dHJ1ZSwiaWQiOiI2NjNEQzdBQUNDMjhBRjc0Q0E2RTZGMzVDMjI1QUE1NCJ9LCJtZXNzYWdlVGltZXN0YW1wIjoxNzIwMjE0NTQwfV0sIm5leHRQcmVLZXlJZCI6MzEsImZpcnN0VW51cGxvYWRlZFByZUtleUlkIjozMSwiYWNjb3VudFN5bmNDb3VudGVyIjoxLCJhY2NvdW50U2V0dGluZ3MiOnsidW5hcmNoaXZlQ2hhdHMiOmZhbHNlfSwiZGV2aWNlSWQiOiIyMkwtaXhTN1JpcVFEaTg4c1FueXhnIiwicGhvbmVJZCI6ImNlODk3NjIyLTdkZDgtNGRhOS05Yjk2LTk0MmZjNzg0ZmY2YSIsImlkZW50aXR5SWQiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJlVC9QcUZMQ3kxWEJyOU1wWXJnc3FmcUVqekU9In0sInJlZ2lzdGVyZWQiOnRydWUsImJhY2t1cFRva2VuIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiVGVmcnYyb3d6L1drOFRsVFAxYzFIWHczck5vPSJ9LCJyZWdpc3RyYXRpb24iOnt9LCJwYWlyaW5nQ29kZSI6Ik1aRVRDMUZBIiwibWUiOnsiaWQiOiIyMzQ4MTIzOTk3OTc2OjFAcy53aGF0c2FwcC5uZXQifSwiYWNjb3VudCI6eyJkZXRhaWxzIjoiQ09yMXFkd0NFUHZIb2JRR0dBRWdBQ2dBIiwiYWNjb3VudFNpZ25hdHVyZUtleSI6IkVhTG5HdDFoYnJlQ0ZaQ3lFbVpRRENMMzNZOWtTNVVvNTVZc0tleUZMMTQ9IiwiYWNjb3VudFNpZ25hdHVyZSI6IkpYbmJNWXpyaGk5UmFwR20zd1FiWHVjbEJxajd1QnRkYkdJdEVIaHZWRlcrZW53aGpYK2dnU1RHVVVSeUQ0L1VVcm1VYzNkVVBkeGFUSCthdWVUdkN3PT0iLCJkZXZpY2VTaWduYXR1cmUiOiJYWGx2NFYxc3Bld2d3RVRNVXRlWGZ1L051QjZQQWRWTFRwREtER1RSSXVOdGIvUEtweE52Zi81aXJoRGNMc0plRURxRXZQZ251QzZhRWROWlpOa0hBUT09In0sInNpZ25hbElkZW50aXRpZXMiOlt7ImlkZW50aWZpZXIiOnsibmFtZSI6IjIzNDgxMjM5OTc5NzY6MUBzLndoYXRzYXBwLm5ldCIsImRldmljZUlkIjowfSwiaWRlbnRpZmllcktleSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IkJSR2k1eHJkWVc2M2doV1FzaEptVUF3aTk5MlBaRXVWS09lV0xDbnNoUzllIn19XSwicGxhdGZvcm0iOiJhbmRyb2lkIiwibGFzdEFjY291bnRTeW5jVGltZXN0YW1wIjoxNzIwMjE0NTM3LCJteUFwcFN0YXRlS2V5SWQiOiJBQUFBQUpYRSJ9";
+global.SESSION_ID = process.env.SESSION_ID || "eyJub2lzZUtleSI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoic05qOEZzQStXN0ExbzgyWXlRNHZqNEttYzBKSnJoT0J2UVBWeFVBclBGND0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoidG1iMUwrVUs2QStLUkJEZjNTckwwUkRpV0x3emRHcVhNdVBQakJPTk9DND0ifX0sInBhaXJpbmdFcGhlbWVyYWxLZXlQYWlyIjp7InByaXZhdGUiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJLS1Z6T280cVJ2UkVubjc2ck5UQXVxQ2xHVS9SbHVCQUhacHpKQzdSajBvPSJ9LCJwdWJsaWMiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJxbUlMY3ZpZVc0VEVXTC93TVUwQnRXVWdpcElSaVc5OGpSQVppZG5KMHk0PSJ9fSwic2lnbmVkSWRlbnRpdHlLZXkiOnsicHJpdmF0ZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IkNIY1QwMS8vWkh3cjVmbVN1dDBBTU5BWUpRd014MThwMXo3MTFHMXhlMW89In0sInB1YmxpYyI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6InpwNFRaTlc5TWhSaEVWNHZ1RllJeW1YKys2SzN1OHBiaGIrTHFnMnpjVGc9In19LCJzaWduZWRQcmVLZXkiOnsia2V5UGFpciI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoieUxjOVNIMXI5a2VDUCtyenNqN2VsRktsWndrZFdkdjJwK2tuRkxna29uYz0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiN1ZFcTNOWW9NclZpK2prazM0eE4wY3FkNUZFbm4zc3FmbnYzVlErMGFpaz0ifX0sInNpZ25hdHVyZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IlVFNDhGUFdlSGVZQ1VENVQ1aGFEYlB0dWxSb05kcHF6b0llRktqVzFHdXYxRytyaFFQSE5NRDFwRlpGak5ya1pxTHg4TXRjU3MyaDNqcUZSYnJqZUFBPT0ifSwia2V5SWQiOjF9LCJyZWdpc3RyYXRpb25JZCI6NzMsImFkdlNlY3JldEtleSI6IjNDSFBzajRFdk5KYVV4MGhPU1ByUnJUUmpaYXM2SVk2c0s2VVFKaGg4S0U9IiwicHJvY2Vzc2VkSGlzdG9yeU1lc3NhZ2VzIjpbXSwibmV4dFByZUtleUlkIjozMSwiZmlyc3RVbnVwbG9hZGVkUHJlS2V5SWQiOjMxLCJhY2NvdW50U3luY0NvdW50ZXIiOjAsImFjY291bnRTZXR0aW5ncyI6eyJ1bmFyY2hpdmVDaGF0cyI6ZmFsc2V9LCJkZXZpY2VJZCI6Ik93cGxJcDE5UkwyZXp4MVNXTWU3V1EiLCJwaG9uZUlkIjoiNDNmZjIzZjgtMmNkOC00OTg3LWFhYTYtYTRiNzBkNDA2NDgyIiwiaWRlbnRpdHlJZCI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IkZtYk9XMllLQmlvM3FvNU14N05Wa3laK1lETT0ifSwicmVnaXN0ZXJlZCI6dHJ1ZSwiYmFja3VwVG9rZW4iOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJ6ZlhXeVI0L1pGMXNYTXFiNXpmR3VkM29JdlE9In0sInJlZ2lzdHJhdGlvbiI6e30sInBhaXJpbmdDb2RlIjoiN1ZYU0Y3RUoiLCJtZSI6eyJpZCI6IjIzNDkxMTIwNDA1MDM6MjRAcy53aGF0c2FwcC5uZXQiLCJuYW1lIjoiU0FNQ09NTVMgSU5URVJORVQgU0VSVklDRVMifSwiYWNjb3VudCI6eyJkZXRhaWxzIjoiQ0l1UThzMEZFSUN2bzdRR0dBSWdBQ2dBIiwiYWNjb3VudFNpZ25hdHVyZUtleSI6InVKR1ZkdkJXTll3WVpUYStXODBvY3B0QnJJbGF6RUZtblhpUzAxSDUvbEU9IiwiYWNjb3VudFNpZ25hdHVyZSI6IndHZ3ZDNUk5eCtjK21SWjlYOXpUNUxTWm5uRTJaNkhsUFRma042ZHB0VnllbWxMVDFQcmNad3AxQjdMSEZ0VTE0b2t3d3ZpdzRqVVFOUVFEVlFXVERRPT0iLCJkZXZpY2VTaWduYXR1cmUiOiJFYjYwLzRFV3VSbTdzaXVQdTc3L1BmK2EycFNBV2RnZkZKL0dBb041MlJMbG84V2N0dERnNFNmVy9sQmg3L2NoKzFvNUxIejlaUHRUWmJSRXB4UHFCQT09In0sInNpZ25hbElkZW50aXRpZXMiOlt7ImlkZW50aWZpZXIiOnsibmFtZSI6IjIzNDkxMTIwNDA1MDM6MjRAcy53aGF0c2FwcC5uZXQiLCJkZXZpY2VJZCI6MH0sImlkZW50aWZpZXJLZXkiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJCYmlSbFhid1ZqV01HR1Uydmx2TktIS2JRYXlKV3N4QlpwMTRrdE5SK2Y1UiJ9fV0sInBsYXRmb3JtIjoic21iYSIsImxhc3RBY2NvdW50U3luY1RpbWVzdGFtcCI6MTcyMDI0NDEwOX0=";
 global.MONGODB = process.env.MONGODB_URI || "";
 global.DATABASE_URL = process.env.DATABASE_URL || "";
 global.sudo = process.env.SUDO
@@ -12,7 +12,7 @@ global.sudo = process.env.SUDO
   : "null";
 global.owner = process.env.OWNER_NUMBER
   ? process.env.OWNER_NUMBER.replace(/[\s+]/g, "")
-  : "2348123997976";
+  : "2349112040503";
 global.THUMB_IMAGE =
   process.env.THUMB_IMAGE ||
   process.env.IMAGE ||
@@ -27,11 +27,11 @@ module.exports = {
   HANDLERS: process.env.PREFIX || ".",
   BRANCH: process.env.BRANCH || "main",
   VERSION: process.env.VERSION || "1.0.0",
-  caption: process.env.CAPTION || "`NTEEJ-MD`",
-  author: process.env.PACK_AUTHER || "NTEEJ-MD",
-  packname: process.env.PACK_NAME || "NTEEJ",
-  botname: process.env.BOT_NAME || "NTEEJ-MD",
-  ownername: process.env.OWNER_NAME || "Nteej",
+  caption: process.env.CAPTION || "`SAMCOMMS__BOT__ 😎`",
+  author: process.env.PACK_AUTHER || "SAMCOMMS__BOT__ 😎",
+  packname: process.env.PACK_NAME || "SAMCOMMS__BOT__ 😎",
+  botname: process.env.BOT_NAME || "SAMCOMMS__BOT__ 😎",
+  ownername: process.env.OWNER_NAME || "`SAMCOMMS_INTERNET_SERVICES`",
   errorChat: process.env.ERROR_CHAT || "",
   KOYEB_API: process.env.KOYEB_API || "false",
   REMOVE_BG_KEY: process.env.REMOVE_BG_KEY || "",
@@ -55,7 +55,7 @@ global.timezone = process.env.TZ || process.env.TIME_ZONE || "Africa/Lagos";
 global.github = process.env.GITHUB || "https://github.com/Ntee-j01/NTEEJ-MD";
 global.gurl = process.env.GURL || "https://whatsapp.com/channel/0029Vae3GZF9Bb658QgSCl1I";
 global.website = process.env.GURL || "https://chat.whatsapp.com/Er6RNNNVWV5LORN9Nr6hL7";
-global.devs = "2348123997976";
+global.devs = "2349112040503";
 global.msg_style = process.env.STYLE || "4";
 global.session_reset = process.env.SS_RESET || "false";
 global.gdbye = process.env.GOODBYE || "false";
@@ -66,9 +66,9 @@ global.disablepm = process.env.DISABLE_PM || "false";
   (global.MsgsInLog = process.env.MSGS_IN_LOG || "true");
 global.waPresence = process.env.WAPRESENCE || "null";
 global.readcmds = process.env.READ_COMMAND || "false";
-global.readmessage = process.env.READ_MESSAGE || "false";
+global.readmessage = process.env.READ_MESSAGE || "true";
 global.readmessagefrom = process.env.READ_MESSAGE_FROM || "null";
-global.read_status = process.env.AUTO_READ_STATUS || "false";
+global.read_status = process.env.AUTO_READ_STATUS || "true";
 global.save_status = process.env.AUTO_SAVE_STATUS || "false";
 global.save_status_from = process.env.SAVE_STATUS_FROM || "null";
 global.read_status_from = process.env.READ_STATUS_FROM || "null";
